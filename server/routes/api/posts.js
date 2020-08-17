@@ -2,16 +2,15 @@ const express = require('express');
 const router = express.Router();
 const Post = require("../../models/Post");
 const {check, validationResult} = require('express-validator');
-
+const auth = require('../../middleware/auth')
 
 // @route    Post api/posts
 // @desc     Create a post
 // @access   Private
 router.get('/', async (req, res) => {
     let text = "completed"
-    let posts = await Post.find()
-    console.log(posts)
-    res.status(400).json(text);
+    let posts = await Post.find().populate('user', '-password')
+    res.status(400).json(posts);
 })
 
 router.post('/',
@@ -30,11 +29,14 @@ router.post('/',
         try{
             let postFields = {
                 title: req.body.title,
-                text: req.body.body
+                text: req.body.body,
+                user: req.user.id
             }
+
             let newPost = new Post(postFields)
             let post = await newPost.save()
-            res.status(400).json(post)
+
+            res.status(200).json(post)
         }catch(err){
             console.error(err.message);
             res.status(500).send("Server Error");

@@ -42,6 +42,8 @@ div.user-likes{
 	text-align: right !important;
 	padding-right: 20px;
 	padding-bottom: 20px;
+	display: flex;
+	justify-content: flex-end;
 }
 .form-group{
 	align-items: center !important;
@@ -56,4 +58,19 @@ nav.navbar{
 nav.navbar-brand{
 	font-weight: 700;
 	font-size: 1.5rem;
+}
+
+.value{
+	padding: 0 5px;
+}
+
+.hidden{
+	visibility: hidden;
+  	opacity: 0;
+  	transition: visibility .5s, opacity 0.2s linear;
+}
+
+.visible{
+	opacity: 100;
+	visibility: visible;
 }

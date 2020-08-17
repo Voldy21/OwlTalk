@@ -15,7 +15,6 @@ const User = require('../../models/User');
 // @desc     Test route
 // @access   Public
 router.get('/', 
-    auth, 
     async (req, res) => {
         try{
             const user = await User.findById(req.user.id)

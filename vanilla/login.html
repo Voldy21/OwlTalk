@@ -12,11 +12,12 @@
 		<!-- Main color Scheme -->
 		<link rel="stylesheet" href="css/style.css">
 		<!-- scripts -->
-		<script type="module" src="scripts/createAccount.js"></script>
+		
 </head>
 
 <body>
-<!-- Header Section -->		
+<!-- Header Section -->
+		
   	</div>
 		<!-- Nav Bar -->
 		<nav class="navbar navbar-expand-lg">
@@ -61,45 +62,31 @@
 	
 		<!-- User Form -->
 	<section>
-		<form id="create-account-form" class="container" style="padding-top: 50px;">
-			<div class="input-group input-group-sm mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="inputGroup-sizing-lg">Username</span>
-				</div>
-				<input name="username" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required >
-			</div>
+		<form id="login" class="container" style="padding-top: 50px;">
 			<div class="input-group input-group-sm mb-3">
 				<div class="input-group-prepend">
 					<span class="input-group-text" id="inputGroup-sizing-lg">Email</span>
 				</div>
-				<input type="text" name="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+				<input name="email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required >
 			</div>
 			<div class="input-group input-group-sm mb-3">
 				<div class="input-group-prepend">
 					<span class="input-group-text" id="inputGroup-sizing-lg">Password</span>
 				</div>
-				<input name="password1" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
-			</div>
-			<div class="input-group input-group-sm mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="inputGroup-sizing-lg">Confirm Password</span>
-				</div>
-				<input name="password2" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
+				<input type="text" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
 			</div>
 			<!-- Buttons -->
 			<div class="container" style="text-align: center">
 				<div class="row">
 					<div class="col-sm">
-						<button 
-						name="submit"
-						type="button" 
-						class="button-style btn btn-info btn-lg" title="Login!">
-						Sign up
-						</button>
-					</div>
-					<div class="col-sm">
-						<a href="login.html"type="button"  class="button-style btn btn-info btn-lg" title="Login!">
+                        <button type="button"
+                        name="submit" class="button-style btn btn-info btn-lg" title="Login!">
 						Login
+						</button>
+                    </div>
+                    <div class="col-sm">
+						<a type="button" href="createAccount.html" class="button-style btn btn-info btn-lg" title="Login!">
+						Create Account
 						</a>
 					</div>
 				</div>
@@ -107,7 +94,7 @@
 		</form>
 	</section>
 		
-		
+    <script type="module" src="scripts/login.js"></script>
 </body>
 
 </html>
