@@ -9,7 +9,7 @@ const auth = require('../../middleware/auth')
 // @access   Private
 router.get('/', async (req, res) => {
     let text = "completed"
-    let posts = await Post.find().populate('user', '-password')
+    let posts = await Post.find().populate('user', '-password').sort([['date', -1]])
     res.status(400).json(posts);
 })
 

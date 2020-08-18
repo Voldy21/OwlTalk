@@ -1,20 +1,18 @@
-import error from './error.js'
 import {getCookie, setCookie, deleteCookie} from './cookies.js'
+import error from './error.js'
 
+let form = document.getElementById("login")
+form.addEventListener("click", login)
 
-let form = document.getElementById("create-account-form")
-form.addEventListener('click', createAccount)
-
-async function createAccount(event){
-    form = event.currentTarget;
-    if(event.target.name === "submit"){
-        if(form.password1.value == form.password2.value){
+async function login(event){
+    let form = event.currentTarget
+    if(event.target.name == "submit"){
+        if(form.password.value && form.email.value){
             let data = {
-                username: form.username.value,
                 email: form.email.value,
-                password: form.password1.value
+                password: form.password.value
             }
-            let message = await fetch("http://localhost:5000/api/users", {
+            let message = await fetch("http://localhost:5000/api/auth", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -29,9 +27,7 @@ async function createAccount(event){
                 window.location.href= `index.html`
             }
         }else{
-            error("passwords do not match")
+            error("fields empty")
         }
     }
-    
 }
-
